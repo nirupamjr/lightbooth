@@ -33,7 +33,7 @@
     <div class="landing-card"><p class="eyebrow">lightbooth</p><h1>make a little<br>memory</h1>
       <div class="mode-switch" role="group" aria-label="Booth mode"><button class="mode active" data-mode="solo">just me</button><button class="mode" data-mode="together">together ♡</button></div>
       <div id="invitePanel" class="invite-panel hidden"><p>Invite someone with this booth link:</p><div class="invite-row"><input id="inviteLink" readonly><button id="copyInvite" class="small-button">copy</button></div><small>It opens the same LightBooth room. Photos are still captured locally in each browser.</small></div>
-      <button id="enterBtn" class="text-button" type="button" onclick="resetLightBooth();document.getElementById('landing').classList.add('hidden');document.getElementById('booth').classList.remove('hidden')">click to step in →</button><p class="credit">made by <span>nirupam.jr</span></p>
+      <button id="enterBtn" class="text-button" type="button" onclick="resetLightBooth();showLightBoothScreen('booth')">click to step in →</button><p class="credit">made by <span>nirupam.jr</span></p>
     </div>
   </section>
   <section id="booth" class="screen booth-screen hidden"><header class="screen-header"><button class="back-button" data-back>← step out</button><h2>lightbooth</h2></header>
@@ -47,6 +47,6 @@
     <fieldset><legend>04 · Pick some paper</legend><button class="choice active" data-key="paper" data-value="celf">LightBooth metal</button><button class="choice" data-key="paper" data-value="satin">White satin</button><button class="choice" data-key="paper" data-value="blue">Blue paper</button><button class="choice" data-key="paper" data-value="pink">Pink paper</button><button class="choice" data-key="paper" data-value="dots">Ink dots</button></fieldset>
     <fieldset><legend>05 · Choose a finish</legend><button class="choice active" data-key="finish" data-value="none">As is</button><button class="choice" data-key="finish" data-value="stars">Star mix</button><button class="choice" data-key="finish" data-value="bedazzle">Bedazzle</button><button class="choice" data-key="finish" data-value="lace">Lace</button></fieldset>
     <button id="saveBtn" class="primary-button save-button">Save image</button><p class="privacy-note">MADE PRIVATELY IN YOUR BROWSER</p></aside></div></section>
-</main><script src="app.js?v=20261108d"></script>
+</main><script src="app.js?v=20261108e"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
 </body></html>
 
