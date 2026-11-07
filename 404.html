@@ -1,0 +1,8 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>LightBooth</title></head><body><script>
+const parts=location.pathname.split('/');
+const base=parts.slice(0,2).join('/')+'/';
+const route=location.pathname.endsWith('/prints')?'prints':'booth';
+location.replace(base+'#'+route);
+</script></body></html>
+
