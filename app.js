@@ -1,7 +1,11 @@
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const state={photos:[],mode:'solo',flash:false,canvas:'strip',border:'classic',filter:'original',paper:'celf',finish:'none',currentCapture:null,retakeIndex:null};
-const screens={landing:$('#landing'),booth:$('#booth'),decorate:$('#decorate')};let stream;window.showLightBoothScreen=name=>show(name);
-function show(name){Object.values(screens).forEach(x=>x.classList.add('hidden'));screens[name].classList.remove('hidden')}
+const screens={landing:$('#landing'),booth:$('#booth'),decorate:$('#decorate')};let stream;
+function routeFor(name){return name==='booth'?'booth':name==='decorate'?'prints':''}
+function appBase(){const p=location.pathname;return p.endsWith('/')?p:p.slice(0,p.lastIndexOf('/')+1)}
+function show(name,navigate=true){Object.values(screens).forEach(x=>x.classList.add('hidden'));screens[name].classList.remove('hidden');if(navigate){const route=routeFor(name),target=appBase()+(route||'');if(location.pathname!==target)history.pushState({screen:name},'',target)}}
+function screenFromUrl(){const p=location.pathname.replace(/\/$/,'');const hash=location.hash.replace('#','');return p.endsWith('/booth')||hash==='booth'?'booth':p.endsWith('/prints')||hash==='prints'?'decorate':'landing'}
+window.showLightBoothScreen=name=>show(name);
 function readFile(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=r.result};r.onerror=reject;r.readAsDataURL(file)})}
 function drawCover(ctx,img,x,y,w,h,filter){const scale=Math.max(w/img.width,h/img.height),iw=img.width*scale,ih=img.height*scale;ctx.save();ctx.filter=filter;ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();ctx.drawImage(img,x+(w-iw)/2,y+(h-ih)/2,iw,ih);ctx.restore()}
 function imageFilter(){return {original:'grayscale(1) sepia(.28) contrast(1.15) brightness(.92)',cool:'grayscale(1) contrast(1.2) brightness(.98) hue-rotate(175deg) saturate(.65)',dreamy:'saturate(1.25) contrast(.92) brightness(1.08) sepia(.08)',flash:'saturate(.55) contrast(1.35) brightness(1.1) sepia(.3)'}[state.filter]}
