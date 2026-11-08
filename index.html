@@ -49,15 +49,28 @@
 .text-button.bubble-button:hover{transform:translate(-2px,-2px);background:linear-gradient(180deg,rgba(48,48,42,.96),rgba(15,15,13,.98));box-shadow:inset 0 1px 0 rgba(242,232,201,.5),inset 0 -5px 0 rgba(0,0,0,.38),7px 7px 0 var(--px-cream)}
 .text-button.bubble-button:active{transform:translate(3px,3px);box-shadow:inset 0 2px 0 rgba(0,0,0,.35),2px 2px 0 var(--px-cream);transition-duration:.05s}
 @media(prefers-reduced-motion:reduce){.text-button.bubble-button{transition:none}.text-button.bubble-button:hover,.text-button.bubble-button:active{transform:none}}
+</style>
+<style id="poster-landing-theme">
+  #landing.landing-screen{display:grid;place-items:center;align-content:start;gap:20px;min-height:100svh;padding:clamp(18px,4vw,48px);background:#000;overflow:auto}
+  .landing-poster{position:relative;width:min(100%,560px);aspect-ratio:9/16;filter:drop-shadow(0 24px 42px rgba(0,0,0,.75))}
+  .landing-poster img{display:block;width:100%;height:100%;object-fit:cover;border-radius:4.5% 4.5% 3.5% 3.5%}
+  .landing-poster:after{content:'';position:absolute;inset:0;border-radius:4.5% 4.5% 3.5% 3.5%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 0 42px rgba(255,255,255,.1);pointer-events:none}
+  #landing .poster-entry{position:absolute;left:50%;bottom:8.5%;z-index:2;transform:translateX(-50%);width:min(72%,300px)}
+  #landing .poster-entry:hover{transform:translateX(calc(-50% - 2px)) translateY(-2px)}
+  #landing .poster-entry:active{transform:translateX(calc(-50% + 3px)) translateY(3px)}
+  #landing .landing-card{width:min(100%,560px);display:grid;justify-items:center;gap:14px}
+  #landing .mode-switch{margin:0;border:1px solid rgba(242,232,201,.5);background:rgba(17,17,15,.9)}
+  #landing .invite-panel{width:min(100%,560px);margin:0}
+  #landing .credit,#landing .eyebrow,#landing-card-title{display:none}
+  @media(max-width:560px){#landing.landing-screen{padding:14px 12px 28px}.landing-poster{width:min(100%,430px)}}
 </style></head>
 <body>
 <main class="app-shell">
   <section id="landing" class="screen landing-screen">
-    <div class="metal-booth" aria-hidden="true"><div class="metal-window"></div><div class="metal-glow"></div></div>
-    <div class="landing-card"><p class="eyebrow">lightbooth</p><h1>make a little<br>memory</h1>
+    <div class="landing-poster"><img src="LightBooth.png" alt="LightBooth metal poster"><button id="enterBtn" class="text-button bubble-button poster-entry" type="button" onclick="resetLightBooth();showLightBoothScreen('booth')">click to step in →</button></div>
+    <div class="landing-card">
       <div class="mode-switch" role="group" aria-label="Booth mode"><button class="mode active" data-mode="solo">just me</button><button class="mode" data-mode="together">together ♡</button></div>
       <div id="invitePanel" class="invite-panel hidden"><p>Invite someone with this booth link:</p><div class="invite-row"><input id="inviteLink" readonly><button id="copyInvite" class="small-button">copy</button></div><small>It opens the same LightBooth room. Photos are still captured locally in each browser.</small></div>
-      <button id="enterBtn" class="text-button bubble-button" type="button" onclick="resetLightBooth();showLightBoothScreen('booth')">click to step in →</button><p class="credit">made by <span>nirupam.jr</span></p>
     </div>
   </section>
   <section id="booth" class="screen booth-screen hidden"><header class="screen-header"><button class="back-button" data-back>← step out</button><h2>lightbooth</h2></header>
@@ -72,6 +85,6 @@
     <fieldset><legend>05 · Pick some paper</legend><button class="choice active" data-key="paper" data-value="celf">LightBooth metal</button><button class="choice" data-key="paper" data-value="satin">White satin</button><button class="choice" data-key="paper" data-value="blue">Blue paper</button><button class="choice" data-key="paper" data-value="pink">Pink paper</button><button class="choice" data-key="paper" data-value="dots">Ink dots</button></fieldset>
     <fieldset><legend>06 · Choose a finish</legend><button class="choice active" data-key="finish" data-value="none">As is</button><button class="choice" data-key="finish" data-value="stars">Star mix</button><button class="choice" data-key="finish" data-value="bedazzle">Bedazzle</button><button class="choice" data-key="finish" data-value="lace">Lace</button></fieldset>
     <button id="saveBtn" class="primary-button save-button">Save image</button><p class="privacy-note">MADE PRIVATELY IN YOUR BROWSER</p></aside></div></section>
-</main><script src="app.js?v=20261108l"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
+</main><script src="app.js?v=20261108m"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
 </body></html>
 
