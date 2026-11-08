@@ -32,7 +32,7 @@
     .camera-stage{aspect-ratio:3/4;max-height:78svh}
     :root{--px-black:#11110f;--px-cream:#f2e8c9;--px-red:#e64835;--px-green:#c1dc75}
     body{background:var(--px-black);color:var(--px-cream);font-family:"Courier New",monospace}
-    .app-shell{background:var(--px-black)}.screen{padding:28px clamp(20px,5vw,80px);min-height:100svh}.landing-screen{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.58)),url("LightBooth.png") center/cover fixed;overflow:auto}.landing-screen:after{display:none}
+    .app-shell{background:var(--px-black)}.screen{padding:28px clamp(20px,5vw,80px);min-height:100svh}.landing-screen{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.58)),url("LightBooth.jpg") center/cover fixed;overflow:auto}.landing-screen:after{display:none}
     .metal-booth{background:var(--px-cream);border:8px solid var(--px-cream);border-radius:0;box-shadow:10px 10px 0 var(--px-red);opacity:1}.metal-booth:before{inset:12px;border:2px dashed var(--px-black);border-radius:0;box-shadow:none}.metal-window{border:12px solid var(--px-black);border-radius:0;background:repeating-linear-gradient(0deg,#171715 0 18px,#3b3b33 18px 21px);box-shadow:none}.metal-window:after{content:'LIGHT\A BOOTH';font-family:Impact,"Arial Black",sans-serif;color:var(--px-green);letter-spacing:.16em;line-height:1.8;text-shadow:4px 4px 0 var(--px-red)}.metal-glow{display:none}
     .landing-card h1{font-family:Impact,"Arial Black",sans-serif;text-transform:uppercase;color:var(--px-cream);text-shadow:6px 6px 0 var(--px-red);letter-spacing:-.04em}.eyebrow{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}.mode-switch{border:2px dashed var(--px-cream);border-radius:0;background:transparent}.mode{color:var(--px-cream);border-radius:0}.mode.active{background:var(--px-red);color:var(--px-cream)}.text-button{background:var(--px-red);color:var(--px-cream);font-family:"Courier New",monospace;font-weight:bold;box-shadow:5px 5px 0 var(--px-cream);padding:12px 16px}.credit{color:var(--px-green)}.credit span{color:var(--px-cream)}
     .screen-header{border-bottom:2px dashed var(--px-cream);padding-bottom:14px}.screen-header h2{font-family:Impact,"Arial Black",sans-serif;text-transform:uppercase;color:var(--px-cream);text-shadow:4px 4px 0 var(--px-red)}.back-button{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}
@@ -67,7 +67,7 @@
 <body>
 <main class="app-shell">
   <section id="landing" class="screen landing-screen">
-    <div class="landing-poster"><img src="LightBooth.png" alt="LightBooth metal poster"><button id="enterBtn" class="text-button bubble-button poster-entry" type="button" onclick="resetLightBooth();showLightBoothScreen('booth')">click to step in →</button></div>
+    <div class="landing-poster"><img src="LightBooth.jpg" alt="LightBooth metal poster"><button id="enterBtn" class="text-button bubble-button poster-entry" type="button" onclick="resetLightBooth();showLightBoothScreen('booth')">click to step in →</button></div>
     <div class="landing-card">
       <div class="mode-switch" role="group" aria-label="Booth mode"><button class="mode active" data-mode="solo">just me</button><button class="mode" data-mode="together">together ♡</button></div>
       <div id="invitePanel" class="invite-panel hidden"><p>Invite someone with this booth link:</p><div class="invite-row"><input id="inviteLink" readonly><button id="copyInvite" class="small-button">copy</button></div><small>It opens the same LightBooth room. Photos are still captured locally in each browser.</small></div>
