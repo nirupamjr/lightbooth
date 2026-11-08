@@ -43,11 +43,12 @@
   </style>
 <style id="pixel-fixes">.metal-window:after{content:'LIGHTBOOTH';writing-mode:horizontal-tb;text-orientation:mixed;white-space:nowrap;letter-spacing:.08em}#camera{transform:scaleX(-1)}</style>
 <style id="bubble-button-theme">
-.text-button.bubble-button{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:210px;padding:15px 24px;overflow:hidden;isolation:isolate;border:1px solid rgba(255,255,255,.75);border-radius:999px;background:linear-gradient(180deg,rgba(45,47,52,.72),rgba(4,5,7,.94));color:#f4eee8;font-family:Arial,sans-serif;font-weight:700;letter-spacing:.02em;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -10px 20px rgba(0,0,0,.55),0 7px 20px rgba(0,0,0,.4);transition:transform .2s ease,box-shadow .2s ease}
-.text-button.bubble-button:before{content:'';position:absolute;inset:-2px;z-index:-1;border-radius:inherit;background:conic-gradient(from 220deg,#ff68c6,#8b8aff,#4edcff,#ffdb67,#ff68c6);filter:blur(6px);opacity:.72}
-.text-button.bubble-button:after{content:'';position:absolute;left:8%;right:8%;top:5px;height:38%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,0));pointer-events:none}
-.text-button.bubble-button:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 26px rgba(0,0,0,.5),0 0 18px rgba(118,172,255,.28)}
-.text-button.bubble-button:active{transform:translateY(0) scale(.98)}
+.text-button.bubble-button{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:210px;padding:15px 24px;overflow:hidden;isolation:isolate;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.24),rgba(255,255,255,.08));color:#f7f3ed;font-family:Arial,sans-serif;font-weight:700;letter-spacing:.02em;backdrop-filter:blur(22px) saturate(115%);-webkit-backdrop-filter:blur(22px) saturate(115%);box-shadow:inset 0 1px 0 rgba(255,255,255,.72),inset 0 -1px 0 rgba(0,0,0,.22),0 7px 22px rgba(0,0,0,.42),0 1px 3px rgba(0,0,0,.3);transition:transform .28s cubic-bezier(.22,1.35,.42,1),box-shadow .28s ease,background .28s ease}
+.text-button.bubble-button:before{content:'';position:absolute;inset:1px;border-radius:inherit;background:linear-gradient(118deg,rgba(255,255,255,.34),rgba(255,255,255,.04) 42%,rgba(255,255,255,.13) 76%,rgba(255,255,255,.02));opacity:.8;pointer-events:none}
+.text-button.bubble-button:after{content:'';position:absolute;left:10%;right:10%;top:4px;height:42%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.48),rgba(255,255,255,0));filter:blur(1px);pointer-events:none}
+.text-button.bubble-button:hover{transform:translateY(-3px) scale(1.015);background:linear-gradient(180deg,rgba(255,255,255,.31),rgba(255,255,255,.11));box-shadow:inset 0 1px 0 rgba(255,255,255,.82),inset 0 -1px 0 rgba(0,0,0,.2),0 12px 30px rgba(0,0,0,.5),0 2px 5px rgba(0,0,0,.3)}
+.text-button.bubble-button:active{transform:translateY(1px) scale(.965);transition-duration:.1s;box-shadow:inset 0 2px 4px rgba(0,0,0,.28),0 3px 9px rgba(0,0,0,.3)}
+@media(prefers-reduced-motion:reduce){.text-button.bubble-button{transition:none}.text-button.bubble-button:hover,.text-button.bubble-button:active{transform:none}}
 </style></head>
 <body>
 <main class="app-shell">
@@ -71,6 +72,6 @@
     <fieldset><legend>05 · Pick some paper</legend><button class="choice active" data-key="paper" data-value="celf">LightBooth metal</button><button class="choice" data-key="paper" data-value="satin">White satin</button><button class="choice" data-key="paper" data-value="blue">Blue paper</button><button class="choice" data-key="paper" data-value="pink">Pink paper</button><button class="choice" data-key="paper" data-value="dots">Ink dots</button></fieldset>
     <fieldset><legend>06 · Choose a finish</legend><button class="choice active" data-key="finish" data-value="none">As is</button><button class="choice" data-key="finish" data-value="stars">Star mix</button><button class="choice" data-key="finish" data-value="bedazzle">Bedazzle</button><button class="choice" data-key="finish" data-value="lace">Lace</button></fieldset>
     <button id="saveBtn" class="primary-button save-button">Save image</button><p class="privacy-note">MADE PRIVATELY IN YOUR BROWSER</p></aside></div></section>
-</main><script src="app.js?v=20261108i"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
+</main><script src="app.js?v=20261108j"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
 </body></html>
 
