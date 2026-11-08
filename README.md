@@ -10,10 +10,5 @@ You can also upload four photos instead of using the camera. The decoration scre
 
 Everything runs privately in the browser; no backend or account is required.
 
-## GitHub Pages
 
-1. Create a public repository named `lightbooth`.
-2. Upload `index.html`, `app.js`, `styles.css`, `README.md`, `CHANGELOG.md`, and `.github/workflows/pages.yml`.
-3. In **Settings → Pages**, choose **GitHub Actions** as the source.
-4. Open `https://YOUR-USERNAME.github.io/lightbooth/` after the workflow finishes.
 
