@@ -41,7 +41,7 @@
     .review-panel>div:first-child{background:var(--px-black);border:2px solid var(--px-cream);border-radius:0}.review-thumb img{border:1px solid var(--px-cream)}.decorate-layout{gap:36px}.preview-panel{background:var(--px-cream);border:8px solid var(--px-cream);min-height:72vh}.preview-panel canvas{box-shadow:8px 8px 0 var(--px-red)}.controls{background:var(--px-black);border:2px solid var(--px-cream);border-radius:0}.controls legend{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}.choice{color:var(--px-cream);border-left:0;border-bottom:1px dashed #77705d}.choice.active{background:var(--px-red);color:var(--px-cream);border-left:0}.choice small{color:var(--px-green)}.choice.active small{color:var(--px-cream)}.range-control{color:var(--px-cream)}.range-control output{color:var(--px-green)}.range-control input{accent-color:var(--px-red)}.privacy-note{color:var(--px-green)}
     @media(max-width:760px){.screen{padding:20px 16px}.metal-booth{box-shadow:7px 7px 0 var(--px-red)}.landing-card h1{font-size:clamp(2.7rem,12vw,4rem)}.camera-stage{box-shadow:6px 6px 0 var(--px-red)}.preview-panel{min-height:auto}}
   </style>
-</head>
+<style id="pixel-fixes">.metal-window:after{content:'LIGHTBOOTH';writing-mode:horizontal-tb;text-orientation:mixed;white-space:nowrap;letter-spacing:.08em}#camera{transform:scaleX(-1)}</style></head>
 <body>
 <main class="app-shell">
   <section id="landing" class="screen landing-screen">
@@ -64,6 +64,6 @@
     <fieldset><legend>05 · Pick some paper</legend><button class="choice active" data-key="paper" data-value="celf">LightBooth metal</button><button class="choice" data-key="paper" data-value="satin">White satin</button><button class="choice" data-key="paper" data-value="blue">Blue paper</button><button class="choice" data-key="paper" data-value="pink">Pink paper</button><button class="choice" data-key="paper" data-value="dots">Ink dots</button></fieldset>
     <fieldset><legend>06 · Choose a finish</legend><button class="choice active" data-key="finish" data-value="none">As is</button><button class="choice" data-key="finish" data-value="stars">Star mix</button><button class="choice" data-key="finish" data-value="bedazzle">Bedazzle</button><button class="choice" data-key="finish" data-value="lace">Lace</button></fieldset>
     <button id="saveBtn" class="primary-button save-button">Save image</button><p class="privacy-note">MADE PRIVATELY IN YOUR BROWSER</p></aside></div></section>
-</main><script src="app.js?v=20261108g"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
+</main><script src="app.js?v=20261108h"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
 </body></html>
 
