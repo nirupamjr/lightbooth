@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LightBooth</title><link rel="stylesheet" href="styles.css"><style>
+  <title>LightBooth · Pixel Poster</title><link rel="stylesheet" href="styles.css"><style>
     .hidden{display:none!important}.review-panel{position:relative;z-index:2;inset:auto;display:grid;place-items:center;gap:14px;background:transparent;padding:0;margin:22px auto 0;max-width:560px}
     .screen-route body{overflow:hidden}.screen-route .screen:not(.hidden){height:100svh;min-height:100svh;overflow:auto}
     .review-panel canvas{max-height:42vh}
@@ -28,6 +28,17 @@
       .text-button{font-size:1rem}
       .credit{margin-top:18px}
     }
+  </style><style id="pixel-poster-theme">
+    :root{--px-black:#11110f;--px-cream:#f2e8c9;--px-red:#e64835;--px-green:#c1dc75}
+    body{background:var(--px-black);color:var(--px-cream);font-family:"Courier New",monospace}
+    .app-shell{background:var(--px-black)}.screen{padding:28px clamp(20px,5vw,80px);min-height:100svh}.landing-screen{background:var(--px-black);overflow:auto}.landing-screen:after{display:none}
+    .metal-booth{background:var(--px-cream);border:8px solid var(--px-cream);border-radius:0;box-shadow:10px 10px 0 var(--px-red);opacity:1}.metal-booth:before{inset:12px;border:2px dashed var(--px-black);border-radius:0;box-shadow:none}.metal-window{border:12px solid var(--px-black);border-radius:0;background:repeating-linear-gradient(0deg,#171715 0 18px,#3b3b33 18px 21px);box-shadow:none}.metal-window:after{content:'LIGHT\A BOOTH';font-family:Impact,"Arial Black",sans-serif;color:var(--px-green);letter-spacing:.16em;line-height:1.8;text-shadow:4px 4px 0 var(--px-red)}.metal-glow{display:none}
+    .landing-card h1{font-family:Impact,"Arial Black",sans-serif;text-transform:uppercase;color:var(--px-cream);text-shadow:6px 6px 0 var(--px-red);letter-spacing:-.04em}.eyebrow{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}.mode-switch{border:2px dashed var(--px-cream);border-radius:0;background:transparent}.mode{color:var(--px-cream);border-radius:0}.mode.active{background:var(--px-red);color:var(--px-cream)}.text-button{background:var(--px-red);color:var(--px-cream);font-family:"Courier New",monospace;font-weight:bold;box-shadow:5px 5px 0 var(--px-cream);padding:12px 16px}.credit{color:var(--px-green)}.credit span{color:var(--px-cream)}
+    .screen-header{border-bottom:2px dashed var(--px-cream);padding-bottom:14px}.screen-header h2{font-family:Impact,"Arial Black",sans-serif;text-transform:uppercase;color:var(--px-cream);text-shadow:4px 4px 0 var(--px-red)}.back-button{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}
+    .camera-stage{border:10px solid var(--px-cream);border-radius:0;background:repeating-linear-gradient(0deg,#171715 0 18px,#3b3b33 18px 21px);box-shadow:8px 8px 0 var(--px-red)}.camera-placeholder{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}.camera-placeholder span{color:var(--px-cream)}.countdown{color:var(--px-red);font-family:Impact,"Arial Black",sans-serif;text-shadow:5px 5px 0 var(--px-cream)}.pose-dots span{border:1px solid var(--px-cream);border-radius:0;color:var(--px-cream)}.pose-dots span.done{background:var(--px-red);color:var(--px-cream);border-color:var(--px-red)}
+    .primary-button,.secondary-button{border:0;border-radius:0;font-family:"Courier New",monospace;font-weight:bold}.primary-button{background:var(--px-red);color:var(--px-cream);box-shadow:5px 5px 0 var(--px-cream)}.secondary-button{border:1px solid var(--px-cream);color:var(--px-cream);background:transparent}.small-button{color:var(--px-green);font-family:"Courier New",monospace}.upload-button{border:1px dashed var(--px-cream);color:var(--px-cream)}
+    .review-panel>div:first-child{background:var(--px-black);border:2px solid var(--px-cream);border-radius:0}.review-thumb img{border:1px solid var(--px-cream)}.decorate-layout{gap:36px}.preview-panel{background:var(--px-cream);border:8px solid var(--px-cream);min-height:72vh}.preview-panel canvas{box-shadow:8px 8px 0 var(--px-red)}.controls{background:var(--px-black);border:2px solid var(--px-cream);border-radius:0}.controls legend{color:var(--px-green);font-family:"Courier New",monospace;font-weight:bold}.choice{color:var(--px-cream);border-left:0;border-bottom:1px dashed #77705d}.choice.active{background:var(--px-red);color:var(--px-cream);border-left:0}.choice small{color:var(--px-green)}.choice.active small{color:var(--px-cream)}.range-control{color:var(--px-cream)}.range-control output{color:var(--px-green)}.range-control input{accent-color:var(--px-red)}.privacy-note{color:var(--px-green)}
+    @media(max-width:760px){.screen{padding:20px 16px}.metal-booth{box-shadow:7px 7px 0 var(--px-red)}.landing-card h1{font-size:clamp(2.7rem,12vw,4rem)}.camera-stage{box-shadow:6px 6px 0 var(--px-red)}.preview-panel{min-height:auto}}
   </style>
 </head>
 <body>
@@ -52,6 +63,6 @@
     <fieldset><legend>05 · Pick some paper</legend><button class="choice active" data-key="paper" data-value="celf">LightBooth metal</button><button class="choice" data-key="paper" data-value="satin">White satin</button><button class="choice" data-key="paper" data-value="blue">Blue paper</button><button class="choice" data-key="paper" data-value="pink">Pink paper</button><button class="choice" data-key="paper" data-value="dots">Ink dots</button></fieldset>
     <fieldset><legend>06 · Choose a finish</legend><button class="choice active" data-key="finish" data-value="none">As is</button><button class="choice" data-key="finish" data-value="stars">Star mix</button><button class="choice" data-key="finish" data-value="bedazzle">Bedazzle</button><button class="choice" data-key="finish" data-value="lace">Lace</button></fieldset>
     <button id="saveBtn" class="primary-button save-button">Save image</button><p class="privacy-note">MADE PRIVATELY IN YOUR BROWSER</p></aside></div></section>
-</main><script src="app.js?v=20261108f"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
+</main><script src="app.js?v=20261108g"></script><script>window.addEventListener('popstate',()=>showLightBoothScreen(screenFromUrl()));showLightBoothScreen(screenFromUrl());</script>
 </body></html>
 
